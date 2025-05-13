@@ -36,7 +36,7 @@ Y_te = np.load('y_test.npy')
 
 # %%
 # MNIST labels are randomly and evenly distributed. pixel intensities are scaled to [0,1]
-D_IDX = 10_000
+D_IDX = 5_000
 
 X_d = X_tr[:D_IDX]
 Y_d = Y_tr[:D_IDX]
@@ -156,3 +156,15 @@ print(f'Cprimeprime achieved {Cprimeprime_acc * 100:.2f}% on test set.')
 '''
 Reject that $H_0$.
 '''
+
+# %%[markdown]
+'''# SVM'''
+
+# %%
+from sklearn.svm import SVC
+svm = SVC()
+svm.fit(A_X_d, Y_d)
+A_svm_acc = accuracy_score(Y_te, svm.predict(A_X_te))
+
+# %%
+print(f'SVM achieved {A_svm_acc * 100:.2f}% on test set.')
