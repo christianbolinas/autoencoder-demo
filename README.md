@@ -1,2 +1,2 @@
 # Autoencoder Demo
-This goes with the blog post here.
+These go along with accompanying blog posts in the `zeroknowledge` repo.
